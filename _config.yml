@@ -4,7 +4,7 @@ highlighter:      rouge
 #remote_theme:     fongandrew/hydeout
 
 # Setup
-title:            Kevin Stillhammers Blog
+title:            eifingers Blog
 tagline:          'IoT and More'
 description:      'IoT and More'
 url:              http://blog.kevinstillhammer.de
