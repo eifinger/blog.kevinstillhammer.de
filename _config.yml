@@ -4,10 +4,10 @@ highlighter:      rouge
 #remote_theme:     fongandrew/hydeout
 
 # Setup
-title:            eifingers Blog
+title:            Kevin Stillhammers Blog
 tagline:          'IoT and More'
 description:      'IoT and More'
-url:              http://blog.kevineifinger.de
+url:              http://blog.kevinstillhammer.de
 baseurl:          #'/hydeout'
                   # the optional subpath of your site, e.g. "/blog"
                   # NB: This applies to all pages in your Jekyll site.
