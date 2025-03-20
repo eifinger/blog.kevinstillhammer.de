@@ -17,12 +17,10 @@ Our existing tests didn't catch the changed serialization which made me look int
 I already knew snapshot testing libraries in the Python ecosystem but had to find suitable candidates for the JVM ecosystem.
 <!--more-->
 One of our backend services is a Kotlin SpringBoot application with HTTP/REST endpoints consuming and producing JSON payloads.
-To serialize the payloads from/to JSON we use Jackson. We also generate DTOs from our OpenAPI specification.
-Due to updating to a new SpringBoot version we also had to update some libraries e.g. Jackson in this whole chain
-which is responsible for the serialization of our JSON payloads.
+To serialize the payloads from/to JSON we use Jackson and generate DTOs from our OpenAPI specification.
 
-One of these version updates introduced a bug which changed the serialization of boolean values in our JSON payloads.
-Fields like `enabled` or `isEnabled` were previously serialized to JSON as `isEnabled`. After the update they were serialized as `enabled`,
+Changing the DTO generation process introduced a bug which changed the serialization of boolean values in our JSON payloads.
+Fields like `enabled` or `isEnabled` were previously serialized to JSON as `isEnabled`. After the change they were serialized as `enabled`,
 dropping the `is` prefix. This change was not caught by our existing tests, not even the end-to-end tests.
 
 The reason this wasn't caught is because in our tests we construct our request objects and do our assertions on the response objects.
@@ -30,7 +28,7 @@ We use the same DTOs and serialzation libraries in our tests as in production. T
 during serialization was happily deserializing the JSON payloads into our DTOs and the tests passed.
 
 We merged the update and rolled out. Soon after other services calling our backend service started breaking.
-They were not using the same serialization libraries, versions or event the same programming language.
+They were not using the same serialization libraries, versions or even the same programming language.
 They were looking for the `isEnabled` field in the JSON payload and not finding it.
 
 This made me look into snapshot testing as an addition to our existing tests to make sure that our JSON payloads are serialized correctly.
