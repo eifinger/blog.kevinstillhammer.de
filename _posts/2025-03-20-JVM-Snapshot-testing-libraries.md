@@ -124,7 +124,7 @@ class SerializationTest {
 Its simplicity has a drawback in comparision to ApprovalTests or selfie.
 If you have dynamic parts in your API responses, like a timestamp or a UUID, you have to manually scrub them from the snapshot.
 
-This library will be our goto for basic snapshot testing in the feature but for our backend service,
+This library will be our goto for basic snapshot testing in the future but for our backend service,
 which does have dynamic parts in the resposes, it was wasn't a good fit.
 
 ### selfie
