@@ -64,7 +64,7 @@ We identified the following candidates by searching Google and asking ChatGPT as
 
 ### Java Snapshot Matcher
 
-https://github.com/Zenika/java-snapshot-matcher
+[Zenika/java-snapshot-matcher](https://github.com/Zenika/java-snapshot-matcher)
 
 - Only supports single snapshot per test method
 - Brings in mandatory dependencies like hamcrest
@@ -76,7 +76,7 @@ Being unmaintained for over 5 years and a very small featureset did not help eit
 
 ### KotlinSnapshot
 
-https://github.com/pedrovgs/KotlinSnapshot
+[pedrovgs/KotlinSnapshot](https://github.com/pedrovgs/KotlinSnapshot)
 
 - Unmaintained since 2022
 - Uses GSON internally
@@ -87,7 +87,7 @@ next the the test classes which we really disliked. It also had a hard dependenc
 
 ### Java Snapshot Testing
 
-https://github.com/origin-energy/java-snapshot-testing
+[origin-energy/java-snapshot-testing](https://github.com/origin-energy/java-snapshot-testing)
 
 - No transitive dependencies
 - JUnit support
@@ -131,15 +131,16 @@ which does have dynamic parts in the resposes, it was wasn't a good fit.
 
 ### selfie
 
-https://github.com/diffplug/selfie
+[diffplug/selfie](https://github.com/diffplug/selfie)
 
 - Most complex candidate
 - Diffplug is known for their high quality libraries
 - Could not get it to work in our project which uses e2e tests with a different source set
 - I do not like that fact that the library will rewrite my test source code
 
-Selfie is definitely the candidate with the fanciest documentation. At first glance it also seems the most powerful library but
-also featuring the most complex source code. This would be hard to maintain in case it gets abandoned but on the plus side
+Selfie is definitely the candidate with the [fanciest documentation](https://selfie.dev/).
+At first glance it also seems the most powerful library but also featuring the most complex source code.
+This would be hard to maintain in case it gets abandoned but on the plus side
 Diffplug is known for their high quality libraries and has a good track record of maintaining them.
 
 Adding it to your project will bring in some transitive dependencies but only kotlin standardlib and Junit stuff so not that bad.
@@ -152,7 +153,7 @@ We also didn't like the fact that the library rewrites the test source code when
 
 ### ApprovalTests.Java
 
-https://github.com/approvals/approvaltests.java
+[approvals/approvaltests.java](https://github.com/approvals/approvaltests.java)
 
 - Automatically opens the diff tool
 - Stores setting in a simple PackageSetting class
