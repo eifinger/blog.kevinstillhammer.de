@@ -16,7 +16,7 @@ baseurl:          #'/hydeout'
                   # sidebar_blog_link below.
 
 author:
-  name:           'Kevin Eifinger'
+  name:           'Kevin Stillhammer'
   url:            https://twitter.com/KevinEifinger
 
 paginate:         5
@@ -30,8 +30,8 @@ plugins:
 
 twitter_username:   KevinEifinger
 github_username:    eifinger
-linkedin_username:  kevineifinger
-xing_username:      Kevin_Eifinger
+linkedin_username:  kevinstillhammer
+xing_username:      Kevin_Stillhammer
 
 # Sidebar link settings
 sidebar_home_link:  true
