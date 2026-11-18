@@ -1,10 +1,18 @@
 {
   "devDependencies": {
+    "highlight.js": "^11.12.0",
+    "marked": "^18.2.1",
+    "marked-footnote": "^1.4.0",
+    "marked-highlight": "^2.2.4",
+    "sass": "^1.108.2",
     "stylelint": "^13.0.0",
     "stylelint-config-sass-guidelines": "^6.2.0",
-    "stylelint-config-standard-scss": "^1.1.0"
+    "stylelint-config-standard-scss": "^1.1.0",
+    "yaml": "^2.9.1"
   },
   "scripts": {
+    "editor": "node tools/editor/server.mjs",
+    "test:editor": "node --test tools/editor/server.test.mjs",
     "stylelint": "stylelint '_sass/**/*.scss'"
   }
 }

@@ -42,3 +42,9 @@ sidebar_home_link:  true
 
 github:
   repo: https://github.com/eifinger/blog.kevineifinger.de
+
+exclude:
+  - tools
+  - node_modules
+  - package.json
+  - package-lock.json

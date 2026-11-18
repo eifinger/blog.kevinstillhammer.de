@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Write — eifingers Blog</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Blog editor home"><span class="brand-icon">e.</span><span>eifingers Blog <small>THE WRITING ROOM</small></span></a>
+    <div class="save-actions"><span id="status" role="status">New draft</span><button id="reload" disabled title="Replace the editor contents with the saved file">Reload from disk</button><button id="save" class="primary">Save draft <kbd>⌘ / Ctrl S</kbd></button></div>
+  </header>
+  <div class="workspace">
+    <aside>
+      <div class="section-label">YOUR WORKSPACE</div>
+      <h1>A little space<br>for your next idea.</h1>
+      <button id="new" class="new-button">＋ New draft</button>
+      <label for="drafts">Open a saved draft</label>
+      <select id="drafts"><option value="">Choose a draft…</option></select>
+      <div class="divider"></div>
+      <div class="section-label">POST DETAILS</div>
+      <label for="date">Post date</label><input id="date" type="date" required>
+      <label for="slug">File slug</label><input id="slug" placeholder="your-next-idea" maxlength="100" pattern="[a-z0-9]+(-[a-z0-9]+)*">
+      <p class="field-note">Fixed after saving or adding an image, so links stay intact.</p>
+      <label for="categories">Categories</label><input id="categories" placeholder="Archive">
+      <label for="tags">Tags</label><input id="tags" placeholder="Kotlin, Testing">
+      <p class="field-note">Separate categories and tags with commas.</p>
+      <div class="draft-note"><span class="note-dot"></span><div><strong>Just a draft. No pressure.</strong><p>Saved to your repository, never published automatically.</p></div></div>
+    </aside>
+    <main>
+      <div class="document-heading"><span class="section-label">DRAFT / <span id="document-name">UNTITLED</span></span><span class="local-badge">● Repository editor</span></div>
+      <label class="sr-only" for="title">Post title</label><textarea id="title" rows="1" placeholder="Your next idea starts here…" autocomplete="off"></textarea>
+      <div class="document-meta"><span>Kevin Stillhammer</span><span>·</span><span id="reading-time">1 min read</span></div>
+      <div class="editor-toolbar">
+        <div class="view-switch" role="group" aria-label="Editor view"><button data-view="write" aria-pressed="false">Write</button><button data-view="split" aria-pressed="true">Split view</button><button data-view="preview" aria-pressed="false">Preview</button></div>
+        <button id="add-image" class="image-button">＋ Add image</button><input id="image-file" type="file" accept="image/png,image/jpeg,image/gif,image/webp" multiple hidden>
+      </div>
+      <div id="panes" data-view="split">
+        <section class="write-pane" aria-label="Markdown editor"><div class="pane-label"><span>MARKDOWN</span><span>Plain text. Endless possibilities.</span></div><label class="sr-only" for="markdown">Markdown</label><textarea id="markdown" spellcheck="true" placeholder="Start with a thought, a question, a story.&#10;&#10;## A heading to get going&#10;&#10;Write in **Markdown**. Paste an image right here.&#10;We’ll take care of the file and the link."></textarea></section>
+        <section class="preview-pane" aria-label="Post preview"><div class="pane-label"><span>LIVE PREVIEW</span><span class="live-dot">●</span></div><iframe id="preview" title="Markdown post preview" sandbox="" referrerpolicy="no-referrer"></iframe><div id="preview-empty"><span class="empty-icon">¶</span><h2>See your story take shape.</h2><p>Your Markdown preview will appear here<br>as you write.</p></div></section>
+      </div>
+      <footer class="editor-footer"><span>Paste images with <kbd>⌘ / Ctrl V</kbd> · or drop them into the editor</span><span id="word-count">0 words</span></footer>
+      <div class="file-paths"><span id="draft-path">Draft → _drafts/your-next-idea.md</span><span id="image-path">Images → assets/pictures/your-next-idea/</span></div>
+      <p class="preview-note">Preview uses your blog’s article styles and highlights code blocks. Jekyll / Liquid tags render when you build the site.</p>
+      <p id="error" role="alert" hidden></p>
+    </main>
+  </div>
+</body>
+</html>
